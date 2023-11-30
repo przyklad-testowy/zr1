@@ -25,13 +25,3 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose -y
 # Klonowanie repozytorium
 git clone https://github.com/conduitxyz/node.git
 
-# Przejście do katalogu repozytorium i konfiguracja
-cd node
-./download-config.py zora-mainnet-0
-export CONDUIT_NETWORK=zora-mainnet-0
-
-# Kopiowanie pliku .env.example do .env
-cp .env.example .env
-
-# Otwarcie pliku .env w edytorze nano
-nano .env
