@@ -42,7 +42,9 @@ sed -i "s|YOUR_API_KEY_HERE|$API_KEY|" .env
 # Uruchomienie Docker Compose
 echo "Uruchamianie Docker Compose..."
 screen -S log
-docker compose up --build
+echo " wklej teraz to: docker compose up --build i poczekaj az wszystkie obrazy sie zbuduja.
+Twój węzeł jest uruchomiony.
+Możesz odłączyć się od ekranu naciskając CTRL + A + D"
 
 # Komunikat końcowy
 echo "Node.js zainstalowany pomyślnie. Życzymy owocnego airdropa!"
