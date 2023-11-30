@@ -37,12 +37,13 @@ echo "Proszę wprowadzić swój klucz API:"
 read API_KEY
 
 # Wstawienie klucza API do pliku .env
-sed -i "s#YOUR_API_KEY_HERE#$API_KEY#" .env
+sed -i "s|YOUR_API_KEY_HERE|$API_KEY|" .env
 
-# Uruchomienie Docker Compose w sesji screen w tle
-screen -dmS log bash -c 'docker compose up --build; echo "Docker zbudowany. Możesz się odłączyć od sesji screen, naciskając CTRL + A, a następnie D. Aby powrócić do sesji, użyj screen -r log."; read -p "Naciśnij dowolny klawisz, aby kontynuować..."'
+# Uruchomienie Docker Compose w sesji screen
+screen -dmS log bash -c 'docker compose up --build; exec sh'
 
 # Informacja dla użytkownika, że proces Docker jest uruchamiany
 echo "Uruchamianie Docker Compose w sesji 'screen' o nazwie 'log'..."
-echo "Proszę czekać na zakończenie procesu budowania..."
-echo "Niech node bedzie z Toba ;)"
+echo "Aby dołączyć do sesji screen, użyj 'screen -r log'."
+echo "Po zbudowaniu Docker, użyj CTRL + A, a następnie D, aby się odłączyć od sesji screen."
+echo "Node.js zainstalowany pomyślnie. Życzymy owocnego airdropa!"
