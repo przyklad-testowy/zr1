@@ -41,6 +41,7 @@ sed -i "s|YOUR_API_KEY_HERE|$API_KEY|" .env
 
 # Uruchomienie Docker Compose
 echo "Uruchamianie Docker Compose..."
+screen -S log
 docker compose up --build
 
 # Komunikat końcowy
