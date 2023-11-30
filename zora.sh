@@ -31,20 +31,6 @@ export CONDUIT_NETWORK=zora-mainnet-0
 
 # Konfiguracja pliku .env
 cp .env.example .env
+nano .env
 
-# Pytanie użytkownika o klucz API
-echo "Proszę wprowadzić swój klucz API:"
-read API_KEY
 
-# Wstawienie klucza API do pliku .env
-sed -i "s|YOUR_API_KEY_HERE|$API_KEY|" .env
-
-# Uruchomienie Docker Compose
-echo "Uruchamianie Docker Compose..."
-screen -S log
-echo " wklej teraz to: docker compose up --build i poczekaj az wszystkie obrazy sie zbuduja.
-Twój węzeł jest uruchomiony.
-Możesz odłączyć się od ekranu naciskając CTRL + A + D"
-
-# Komunikat końcowy
-echo "Node.js zainstalowany pomyślnie. Życzymy owocnego airdropa!"
