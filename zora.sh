@@ -17,20 +17,21 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
-# Aktualizacja i instalacja Docker
 sudo apt-get update
+
+# Instalacja Docker
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-compose -y
 
-# Klonowanie repozytorium i konfiguracja
+# Klonowanie repozytorium
 git clone https://github.com/conduitxyz/node.git
+
+# Przejście do katalogu repozytorium i konfiguracja
 cd node
 ./download-config.py zora-mainnet-0
-
-# Ustawienie zmiennej środowiskowej
 export CONDUIT_NETWORK=zora-mainnet-0
 
-# Konfiguracja pliku .env
+# Kopiowanie pliku .env.example do .env
 cp .env.example .env
+
+# Otwarcie pliku .env w edytorze nano
 nano .env
-
-
